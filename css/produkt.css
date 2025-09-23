@@ -1,0 +1,5 @@
+.path{
+    max-width: 400px;
+    text-wrap: nowrap;
+    overflow: hidden;
+}

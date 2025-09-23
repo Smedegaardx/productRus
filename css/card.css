@@ -1,0 +1,78 @@
+.ProductCard img{
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.ProductCard{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.ProductInfo{
+   line-height: 1.5rem;
+}
+
+.Categories{
+    color: gray;
+}
+
+.SeMere{
+    color: black;
+}
+
+
+/* Fjerner elementer som ikke skal vises. Kan tilføjes ved at sætte class SoldOut eller Nedsat på kortet */
+.PrevPrice, .Price span, .Discount, .SoldOutOverlay{
+    display: none;
+}
+
+/* Hvis produktet er udsolgt */
+
+.SoldOut .SoldOutOverlay{
+ display: block;
+}
+
+.SoldOut img{
+    opacity: 50%;
+}
+
+.ImgContainer{
+    position: relative;
+}
+
+.SoldOutOverlay p{
+    background-color:rgba(0, 0, 0, 0.5);
+    width: 33%;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.SoldOutOverlay{
+    position: absolute;
+    top: 0;
+   background-color:rgba(0, 0, 0, 0.1);
+   width: 100%;
+   height: 100%;
+}
+
+/* Hvis produktet er nedsat */
+.Nedsat .PrevPrice, .Nedsat .Discount{
+    display: block;
+}
+
+.Nedsat .Price span{
+    display: inline-block;
+}
+
+.PriceDisc{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Discount{
+    background-color: red;
+    padding: 0.4rem;
+}

@@ -1,78 +1,84 @@
-.ProductCard img{
+.BigProductCard{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+}
+
+.BigProductCard img{
     max-width: 100%;
     display: block;
     margin: auto;
 }
 
-.ProductCard{
+/* Anden kolonne */
+
+.Column2{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
+    padding-right: 1rem;
 }
 
-.ProductInfo{
-   line-height: 1.5rem;
+.Column2 h1{
+    font-size: 36px;
+    margin-bottom: 25px;
 }
 
-.Categories{
-    color: gray;
+dd{
+    margin-left: 20px;
 }
 
-.SeMere{
-    color: black;
+dt{
+    font-weight: bold;
+    margin: 0.5rem 0;
 }
 
+/* Tredje kollone */
 
-/* Fjerner elementer som ikke skal vises. Kan tilføjes ved at sætte class SoldOut eller Nedsat på kortet */
-.PrevPrice, .Price span, .Discount, .SoldOutOverlay{
-    display: none;
-}
-
-/* Hvis produktet er udsolgt */
-
-.SoldOut .SoldOutOverlay{
- display: block;
-}
-
-.SoldOut img{
-    opacity: 50%;
-}
-
-.ImgContainer{
-    position: relative;
-}
-
-.SoldOutOverlay p{
-    background-color:rgba(0, 0, 0, 0.5);
-    width: 33%;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-.SoldOutOverlay{
-    position: absolute;
-    top: 0;
+.Column3{
    background-color:rgba(0, 0, 0, 0.1);
-   width: 100%;
-   height: 100%;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
 }
 
-/* Hvis produktet er nedsat */
-.Nedsat .PrevPrice, .Nedsat .Discount{
-    display: block;
+.Column3 h1{
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
 }
 
-.Nedsat .Price span{
-    display: inline-block;
+.Column3 p, .Column3 label{
+    color: white;
 }
 
-.PriceDisc{
-    display: flex;
-    justify-content: space-between;
+.descriptor{
+    padding: 2rem 1rem;
+    line-height: 2.5rem;
 }
 
-.Discount{
-    background-color: red;
-    padding: 0.4rem;
+form{
+ margin: 0 1rem 3rem 1rem;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+}
+
+label{
+    font-size: 14px;
+}
+
+select{
+    background-color: whitesmoke;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+input{
+    background-color: whitesmoke;
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 1rem;
+    grid-column-start: span 2;
 }
