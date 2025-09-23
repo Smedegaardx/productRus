@@ -8,16 +8,6 @@
     text-decoration: none;
 }
 
-span{
-    color: red;
-    transform: scaleX(-1);
-    display: inline-block;
-}
-
-h1{
-    font-size: 48px;
-}
-
 h2{
     font-size: 30px;
     margin-bottom: 1.5rem;
@@ -29,10 +19,6 @@ h2{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
 }
-.flexends{
-    display: flex;
-    justify-content:space-between;
-}
 }
 
 @media(max-width: 800px) {
@@ -40,9 +26,5 @@ h2{
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-}
-
-.flexends{
-    text-align: center;
 }
 }
