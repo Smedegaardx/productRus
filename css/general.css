@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(/assets/fonts/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
+*{
+    margin: 0;
+    font-family: "Roboto";
+}
+
+main, header{
+    max-width: 1212px;
+    padding: 2rem;
+    margin: auto;
+}
+
