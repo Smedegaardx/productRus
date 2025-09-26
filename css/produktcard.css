@@ -1,14 +1,12 @@
-.path a{
-    text-decoration: none;
-    color: black;
-}
-
-.BigProductCard{
+@media(min-width: 800px) {
+    #BigProductCard{
     display: grid;
     grid-template-columns: 2fr 2fr 1fr;
+    margin-top: 1rem;
+}
 }
 
-.BigProductCard img{
+#BigProductCard img{
     max-width: 100%;
     display: block;
     margin: auto;
