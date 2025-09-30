@@ -9,15 +9,19 @@ document.querySelector("#Prev").addEventListener("click", Left);
 document.querySelector("#Next").addEventListener("click", Right);
 
 let start = 0;
+let counter = document.querySelector("#Counter");
+counter.innerHTML = `${start} - ${start + 16}`;
 
 function Left() {
   listContainer.innerHTML = ``;
   start -= 16;
+  counter.innerHTML = `${start} - ${start + 16}`;
   getData();
 }
 function Right() {
   listContainer.innerHTML = ``;
   start += 16;
+  counter.innerHTML = `${start} - ${start + 16}`;
   getData();
 }
 
