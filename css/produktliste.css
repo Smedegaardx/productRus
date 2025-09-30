@@ -1,9 +1,41 @@
+#logo:hover{
+ cursor: pointer;
+}
+
 #ProductListContainer{
     margin-top: 2rem;
 }
 
+#NextPrev{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem;
+    font-size: 40px;
+}
+
+#NextPrev p:hover{
+    cursor: pointer;
+}
+
 h2{
     font-size: 35px;
+}
+
+button{
+      background-color: whitesmoke;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0.5rem 0 2rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button:active{
+    background-color: darkgrey;
 }
 
 @media(min-width: 800px) {
