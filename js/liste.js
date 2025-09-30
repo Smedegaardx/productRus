@@ -5,6 +5,22 @@ const listContainer = document.querySelector("#ProductListContainer");
 const categoryHeader = document.querySelector("#CategoryHeader");
 const filterButtons = document.querySelectorAll("button").forEach((knap) => knap.addEventListener("click", showFiltered));
 
+document.querySelector("#Prev").addEventListener("click", Left);
+document.querySelector("#Next").addEventListener("click", Right);
+
+let start = 0;
+
+function Left() {
+  listContainer.innerHTML = ``;
+  start -= 16;
+  getData();
+}
+function Right() {
+  listContainer.innerHTML = ``;
+  start += 16;
+  getData();
+}
+
 document.getElementById("logo").addEventListener("click", Home);
 
 function Home() {
@@ -13,12 +29,15 @@ function Home() {
 
 let allData;
 
-fetch(`https://kea-alt-del.dk/t7/api/products?limit=40&category=${category}`)
-  .then((response) => response.json())
-  .then((json) => {
-    allData = json;
-    showProducts(allData);
-  });
+function getData() {
+  fetch(`https://kea-alt-del.dk/t7/api/products?start=${start}&limit=16&category=${category}`)
+    .then((response) => response.json())
+    .then((json) => {
+      allData = json;
+      showProducts(allData);
+    });
+}
+getData();
 
 function showProducts(data) {
   let markup = "";
