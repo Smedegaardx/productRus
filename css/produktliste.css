@@ -14,6 +14,11 @@
     font-size: 40px;
 }
 
+#Counter{
+    font-size: 20px;
+    margin-top: 0.8rem;
+}
+
 #NextPrev p:hover{
     cursor: pointer;
 }
