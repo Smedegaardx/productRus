@@ -4,11 +4,14 @@ header span{
     display: inline-block;
 }
 
-header h1{
+header #logo{
     font-size: 48px;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
 }
 
-header a{
+header div a{
     text-decoration: underline;
 }
 

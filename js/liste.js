@@ -5,7 +5,6 @@ const listContainer = document.querySelector("#ProductListContainer");
 const categoryHeader = document.querySelector("#CategoryHeader");
 let allData, currentDataSet;
 
-
 // Frem og tilbage pile i bunden samt sidetæller
 document.querySelector("#Prev").addEventListener("click", Left);
 document.querySelector("#Next").addEventListener("click", Right);
