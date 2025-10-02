@@ -12,6 +12,10 @@ header a{
     text-decoration: underline;
 }
 
+#logo:hover{
+ cursor: pointer;
+}
+
 @media(min-width: 800px) {
 
 .flexends{

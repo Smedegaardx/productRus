@@ -5,6 +5,8 @@ const listContainer = document.querySelector("#ProductListContainer");
 const categoryHeader = document.querySelector("#CategoryHeader");
 let allData, currentDataSet;
 
+
+// Frem og tilbage pile i bunden samt sidetæller
 document.querySelector("#Prev").addEventListener("click", Left);
 document.querySelector("#Next").addEventListener("click", Right);
 
@@ -23,12 +25,6 @@ function Right() {
   start += 16;
   counter.innerHTML = `${start} - ${start + 16}`;
   getData();
-}
-
-document.getElementById("logo").addEventListener("click", Home);
-
-function Home() {
-  window.location.href = "index.html";
 }
 
 function getData() {
