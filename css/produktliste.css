@@ -28,7 +28,7 @@ h2{
 }
 
 button{
-      background-color: whitesmoke;
+    background-color: whitesmoke;
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
     font-weight: bold;
@@ -39,8 +39,8 @@ button:hover{
     cursor: pointer;
 }
 
-button:active{
-    background-color: darkgrey;
+button:focus{
+    background-color: #555;
 }
 
 @media(min-width: 800px) {

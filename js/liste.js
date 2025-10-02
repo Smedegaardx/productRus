@@ -3,7 +3,7 @@ const category = params.get("category");
 
 const listContainer = document.querySelector("#ProductListContainer");
 const categoryHeader = document.querySelector("#CategoryHeader");
-const filterButtons = document.querySelectorAll("button").forEach((knap) => knap.addEventListener("click", showFiltered));
+let allData, currentDataSet;
 
 document.querySelector("#Prev").addEventListener("click", Left);
 document.querySelector("#Next").addEventListener("click", Right);
@@ -31,13 +31,11 @@ function Home() {
   window.location.href = "index.html";
 }
 
-let allData;
-
 function getData() {
   fetch(`https://kea-alt-del.dk/t7/api/products?start=${start}&limit=16&category=${category}`)
     .then((response) => response.json())
     .then((json) => {
-      allData = json;
+      allData = currentDataSet = json;
       showProducts(allData);
     });
 }
@@ -67,17 +65,32 @@ function showProducts(data) {
           </div>
         </div>`;
   });
-  listContainer.innerHTML += markup;
+  listContainer.innerHTML = markup;
   categoryHeader.innerHTML = `${category}`;
 }
 
-function showFiltered() {
-  listContainer.innerHTML = ``;
-  const filter = this.dataset.gender;
-  if (filter == "All") {
+document.querySelector("#FilterButtons").addEventListener("click", showFiltered);
+document.querySelector("#SortingButtons").addEventListener("click", sortItems);
+
+function showFiltered(event) {
+  const gender = event.target.dataset.gender;
+  if (gender == "All") {
     showProducts(allData);
+    currentDataSet = allData;
   } else {
-    fraction = allData.filter((product) => product.gender === filter);
-    showProducts(fraction);
+    const udsnit = allData.filter((product) => product.gender === gender);
+    currentDataSet = udsnit;
   }
+  showProducts(currentDataSet);
+}
+
+function sortItems(event) {
+  const direction = event.target.dataset.direction;
+  if (direction == "lohi") {
+    console.log(direction);
+    currentDataSet.sort((firstItem, secondItem) => firstItem.price - secondItem.price);
+  } else {
+    currentDataSet.sort((firstItem, secondItem) => secondItem.price - firstItem.price);
+  }
+  showProducts(currentDataSet);
 }
